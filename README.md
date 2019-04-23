@@ -6,7 +6,7 @@ Our entry had the highest AUROC score on the
 
 The CNN model provided achieves a higher Jaccard Index than the CNN entry used in the challenge. We make the case that the Jaccard Index provides a more clinically meaningful measure of performance than the AUROC score. More details can be found in,
 
-> J. Kawahara and G. Hamarneh, “Fully convolutional neural networks to detect clinical dermoscopic features,” IEEE J. Biomed. Heal. Informatics, vol. 23, no. 2, pp. 578–585, 2019. [<a href="https://doi.org/10.1109/JBHI.2018.2831680">DOI</a>] [<a href="https://arxiv.org/pdf/1703.04559.pdf">PDF</a>]
+> Jeremy Kawahara and Ghassan Hamarneh, “Fully convolutional neural networks to detect clinical dermoscopic features,” IEEE Journal of Biomedical and Health Informatics, vol. 23, no. 2, pp. 578–585, 2019. [<a href="https://doi.org/10.1109/JBHI.2018.2831680">DOI</a>] [<a href="https://arxiv.org/pdf/1703.04559.pdf">PDF</a>]
 
 # Installation
 `skinisic` is a Python module that relies on <a href="https://keras.io/">Keras</a>.
@@ -26,3 +26,21 @@ To use `skinisic`,
   ```
 You should see the following output:
 ![Predicted Output](https://github.com/jeremykawahara/skinisic/blob/master/docs/figs/min_example_predicted.png)
+
+You can find a more <a href="https://github.com/jeremykawahara/skinisic/blob/master/notebooks/isic2017_part2-detect-criteria_infer.ipynb">comprehensive example here</a>.
+
+# Publications
+If you find this code or model helpful, please consider citing our work:
+```
+@article{Kawahara2019,
+author = {Kawahara, Jeremy and Hamarneh, Ghassan},
+doi = {10.1109/JBHI.2018.2831680},
+issn = {21682194},
+journal = {IEEE Journal of Biomedical and Health Informatics},
+number = {2},
+pages = {578--585},
+title = {Fully convolutional neural networks to detect clinical dermoscopic features},
+volume = {23},
+year = {2019}
+}
+```
