@@ -6,7 +6,7 @@ Our entry had the highest AUROC score on the
 
 The CNN model provided achieves a higher Jaccard Index than the CNN entry used in the challenge. We make the case that the Jaccard Index provides a more clinically meaningful measure of performance than the AUROC score. More details can be found in,
 
-> J. Kawahara and G. Hamarneh, “Fully convolutional neural networks to detect clinical dermoscopic features,” IEEE J. Biomed. Heal. Informatics, vol. 23, no. 2, pp. 578–585, 2019. https://doi.org/10.1109/JBHI.2018.2831680 [<a href="https://arxiv.org/pdf/1703.04559.pdf">PDF</a>]
+> J. Kawahara and G. Hamarneh, “Fully convolutional neural networks to detect clinical dermoscopic features,” IEEE J. Biomed. Heal. Informatics, vol. 23, no. 2, pp. 578–585, 2019. [<a href="https://doi.org/10.1109/JBHI.2018.2831680">DOI</a>] [<a href="https://arxiv.org/pdf/1703.04559.pdf">PDF</a>]
 
 # Installation
 `skinisic` is a Python module that relies on <a href="https://keras.io/">Keras</a>.
@@ -14,8 +14,15 @@ The CNN model provided achieves a higher Jaccard Index than the CNN entry used i
 You can see the dependencies and versions tested on <a href="https://github.com/jeremykawahara/skinisic/blob/master/version_check.ipynb">here</a>.
 
 To use `skinisic`,
-  1. Download the trained model.</li>
-  2. Clone this repository to your local machine.</li>
+  1. Navigate to your desired directory (e.g., `/projects` for this example) and open terminal.
+  1. Clone this repository to your local machine:<br />
   `git clone https://github.com/jeremykawahara/skinisic.git`
-  3. Run the minimal example.</li>
-
+  1. Download the trained model and save to disk (e.g,. `/projects/skinisic/notebooks/data`):<br />
+  https://github.com/jeremykawahara/skinisic/releases/download/v0.0.1/vgg_f1-batch_aug.h5
+  1. Navigate to the `skinisic` directory and run the minimal example (may take a seconds):<br />
+  ```
+  cd skinisic
+  python minimal_example.py 'notebooks/data/isic2017-part2_vgg_f1-batch_aug.h5'
+  ```
+You should see the following output:
+![Predicted Output](https://github.com/jeremykawahara/skinisic/blob/master/docs/figs/min_example_predicted.png)
