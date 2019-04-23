@@ -18,8 +18,8 @@ To use `skinisic`,
   1. Clone this repository to your local machine:<br />
   `git clone https://github.com/jeremykawahara/skinisic.git`
   1. Download the trained model and save to disk (e.g,. `/projects/skinisic/notebooks/data`):<br />
-  https://github.com/jeremykawahara/skinisic/releases/download/v0.0.1/vgg_f1-batch_aug.h5
-  1. Navigate to the `skinisic` directory and run the <a href="">minimal example</a> (may take a seconds):<br />
+  https://github.com/jeremykawahara/skinisic/releases/download/v0.0.1/isic2017-part2_vgg_f1-batch_aug.h5
+  1. Navigate to the `skinisic` directory and run the <a href="https://github.com/jeremykawahara/skinisic/blob/master/minimal_example.py">minimal example</a> (may take a seconds):<br />
   ```
   cd skinisic
   python minimal_example.py 'notebooks/data/isic2017-part2_vgg_f1-batch_aug.h5'
