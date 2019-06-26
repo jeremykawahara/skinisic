@@ -10,7 +10,7 @@ from keras.layers import (
 )
 
 
-def fcn_vgg_bottomheavy(input_shape, nb_labels, leaky_alpha=0, freeze_base=False):
+def fcn_vgg_bottomheavy(input_shape, nb_labels, leaky_alpha=0, freeze_base=False, kernel_size=(1,1)):
     """Fully convolutional neural network with independent output labels.
 
     Original model inspired by:
@@ -21,6 +21,7 @@ def fcn_vgg_bottomheavy(input_shape, nb_labels, leaky_alpha=0, freeze_base=False
         nb_labels: Number of output labels.
         leaky_alpha: The leaky_alpha rate for ReLU (set to 0 for regular ReLU).
         freeze_base: If True then the parameters of the base VGG are not updated.
+        kernel_size: Kernel size for the last layer.
 
     Returns:
         The CNN model.
@@ -61,7 +62,7 @@ def fcn_vgg_bottomheavy(input_shape, nb_labels, leaky_alpha=0, freeze_base=False
 
     x = concatenate([block1, block2_full, block3_full, block4_full, block5_full, block5_pool_full])
 
-    x = Convolution2D(nb_labels, (1, 1), activation='sigmoid')(x)
+    x = Convolution2D(nb_labels, kernel_size, activation='sigmoid', padding='same')(x)
 
     model = Model(inputs=input_tensor, outputs=x)
 
