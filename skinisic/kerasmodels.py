@@ -40,15 +40,15 @@ def fcn_vgg_bottomheavy(input_shape, nb_labels, leaky_alpha=0, freeze_base=False
     block3 = base_model.get_layer('block3_conv3').output
     block4 = base_model.get_layer('block4_conv3').output
 
-    block4 = Convolution2D(64, (1, 1))(block4)
+    block4 = Convolution2D(64, kernel_size, padding='same')(block4)
     block4 = LeakyReLU(alpha=leaky_alpha)(block4)
 
     block5 = base_model.get_layer('block5_conv3').output
-    block5 = Convolution2D(32, (1, 1))(block5)
+    block5 = Convolution2D(32, kernel_size, padding='same')(block5)
     block5 = LeakyReLU(alpha=leaky_alpha)(block5)
 
     block5_pool = base_model.get_layer('block5_pool').output
-    block5_pool = Convolution2D(32, (1, 1))(block5_pool)
+    block5_pool = Convolution2D(32, kernel_size, padding='same')(block5_pool)
     block5_pool = LeakyReLU(alpha=leaky_alpha)(block5_pool)
 
     def resize_bilinear(block):
