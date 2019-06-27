@@ -1,8 +1,8 @@
 import numpy as np
-import scipy
+from PIL import Image
 
 
-def imresize3d(x, target_dims, interp='nearest', mode='F', dtype=np.float32):
+def imresize3d(x, target_dims, dtype=np.float32):
     """Resize each channel within the third dimension.
 
         `scipy.misc.imresize` does not work if the number of channels is > 3.
@@ -13,6 +13,11 @@ def imresize3d(x, target_dims, interp='nearest', mode='F', dtype=np.float32):
 
     x_resize = np.zeros(shape=(target_dims[0], target_dims[1], x.shape[2]), dtype=dtype)
     for idx in range(x.shape[2]):
-        x_resize[:, :, idx] = scipy.misc.imresize(x[:, :, idx], target_dims, interp, mode)
+        # scipy no longer supports `imresize`
+        # https://docs.scipy.org/doc/scipy-1.2.1/reference/generated/scipy.misc.imresize.html
+        # resized_img = scipy.misc.imresize(x[:, :, idx], target_dims, interp, mode)
+        # For some reason, the dimensions are switched here.
+        resized_img = Image.fromarray(x[:,:,idx]).resize((target_dims[1], target_dims[0]))
+        x_resize[:, :, idx] = resized_img
 
     return x_resize
