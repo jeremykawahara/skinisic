@@ -27,7 +27,7 @@ To use `skinisic`,
 You should see the following output:
 ![Predicted Output](https://github.com/jeremykawahara/skinisic/blob/master/docs/figs/min_example_predicted.png)
 
-You can find a more <a href="https://github.com/jeremykawahara/skinisic/blob/master/notebooks/isic2017_part2-detect-criteria_infer.ipynb">comprehensive example here</a>.
+You can find a more <a href="https://github.com/jeremykawahara/skinisic/blob/master/notebooks/isic2017_part2_detect_criteria.ipynb">comprehensive example here</a>.
 
 # Publications
 If you find this code or model helpful, please consider citing our work:
